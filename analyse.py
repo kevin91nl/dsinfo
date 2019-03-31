@@ -171,6 +171,10 @@ class Summarizer(Analyzer):
             all_papers.append(paper)
 
         all_papers = sorted(all_papers, key=operator.itemgetter('date'), reverse=True)
+
+        if not os.path.exists('webapp/static/data'):
+            os.makedirs('webapp/static/data')
+
         with open(os.path.join('webapp/static/data', 'papers.json'), 'w') as out_file:
             json.dump({
                 'papers': all_papers
