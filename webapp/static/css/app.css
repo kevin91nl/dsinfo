@@ -1,0 +1,28 @@
+body, html {
+    background-color: black;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    margin: 0;
+    padding: 10px;
+}
+
+#wordcloud {
+    width: 250px;
+    margin-left: calc(50% - 125px);
+}
+
+table {
+    width: 100%;
+}
+
+table tr {
+    width: 33%;
+}
+
+a, a:hover {
+    color: white;
+}
+
+a:visited {
+    color: #007bff;
+}
