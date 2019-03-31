@@ -57,12 +57,12 @@ class TwitterScraper(Scraper, StreamListener):
         data_dict['created'] = data_dict.get('created_at', None)
         data_dict['link'] = 'https://twitter.com/statuses/' + str(data_dict['id']) + '/'
         if data_dict.get('created') is not None:
-            data_dict['created'] = time.strftime('%Y-%m-%dT%H:%M:%S%z', time.strptime(data_dict.get('created'),
+            data_dict['created'] = time.strftime('%Y-%m-%dT%H:%M:%S', time.strptime(data_dict.get('created'),
                                                                                       '%a %b %d %H:%M:%S +0000 %Y'))
 
         # Write to disk
         folder = os.path.join(self.path,
-                              time.strftime('%Y-%m-%d', time.strptime(data_dict.get('created'), '%Y-%m-%dT%H:%M:%S%z')))
+                              time.strftime('%Y-%m-%d', time.strptime(data_dict.get('created'), '%Y-%m-%dT%H:%M:%S')))
         if not os.path.exists(folder):
             os.makedirs(folder)
         path = os.path.join(folder, str(data_dict['id']) + '.json')
