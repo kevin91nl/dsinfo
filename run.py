@@ -65,11 +65,11 @@ if __name__ == '__main__':
 
     # First, start the Flask server
     logger.info('Starting webserver...')
-    process = subprocess.Popen(['python', os.path.join('webapp', 'webserver.py')])
+    process = subprocess.Popen(['python3', os.path.join('webapp', 'webserver.py')])
 
     # Then, start the analyser
     logger.info('Starting analyser...')
-    process_analyser = subprocess.Popen(['python', 'analyse.py', '--path', parsed_args.path])
+    process_analyser = subprocess.Popen(['python3', 'analyse.py', '--path', parsed_args.path])
 
     # Create processes for the jobs
     jobs = []
