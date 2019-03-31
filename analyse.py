@@ -184,10 +184,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     while True:
-        try:
-            Summarizer(args.path, args.window)()
-            TfIdfAnalyzer(args.path, args.window)()
-            time.sleep(10)
-        except:
-            time.sleep(10)
-            continue
+        Summarizer(args.path, args.window)()
+        TfIdfAnalyzer(args.path, args.window)()
+        time.sleep(10)
