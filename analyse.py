@@ -98,7 +98,10 @@ class Analyzer:
         texts = []
         for file in files:
             with open(file, 'r') as in_file:
-                entry = json.load(in_file)
+                try:
+                    entry = json.load(in_file)
+                except:
+                    continue
                 entries.append(entry)
                 texts.append(entry)
 
